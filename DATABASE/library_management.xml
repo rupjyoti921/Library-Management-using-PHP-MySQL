@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.9.0.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Dec 30, 2020 at 02:37 PM
+- Server version: 10.4.6-MariaDB
+- PHP Version: 7.3.9
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="library_management" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="admin">
+                CREATE TABLE `admin` (
+                  `id` int(3) NOT NULL AUTO_INCREMENT,
+                  `user_name` varchar(20) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL,
+                  `pass` varchar(50) NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="book_entry">
+                CREATE TABLE `book_entry` (
+                  `book_id` varchar(15) NOT NULL,
+                  `book_name` varchar(50) NOT NULL,
+                  `author_name` varchar(50) NOT NULL,
+                  `price` varchar(10) NOT NULL,
+                  `department` varchar(10) NOT NULL,
+                  `semester` varchar(10) NOT NULL,
+                  `subject` varchar(60) NOT NULL,
+                  `entry_date` date NOT NULL,
+                  PRIMARY KEY (`book_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="img_upload">
+                CREATE TABLE `img_upload` (
+                  `image` varchar(500) NOT NULL,
+                  `u_id` varchar(20) NOT NULL,
+                  PRIMARY KEY (`u_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="issue_books">
+                CREATE TABLE `issue_books` (
+                  `book_id` varchar(15) NOT NULL,
+                  `book_name` varchar(40) NOT NULL,
+                  `price` varchar(10) NOT NULL,
+                  `stu_name` varchar(50) NOT NULL,
+                  `roll_no` varchar(30) NOT NULL,
+                  `u_id` varchar(20) NOT NULL,
+                  `department` varchar(10) NOT NULL,
+                  `semester` varchar(10) NOT NULL,
+                  `issue_date` date NOT NULL,
+                  PRIMARY KEY (`book_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="library_book">
+                CREATE TABLE `library_book` (
+                  `book_id` varchar(15) NOT NULL,
+                  `book_name` varchar(50) NOT NULL,
+                  `author_name` varchar(50) NOT NULL,
+                  `price` varchar(10) NOT NULL,
+                  `department` varchar(10) NOT NULL,
+                  `semester` varchar(10) NOT NULL,
+                  `subject` varchar(60) NOT NULL,
+                  PRIMARY KEY (`book_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="remove_book">
+                CREATE TABLE `remove_book` (
+                  `remove_date` date NOT NULL,
+                  `book_id` varchar(20) NOT NULL,
+                  `book_name` varchar(50) NOT NULL,
+                  `author_name` varchar(40) NOT NULL,
+                  `price` varchar(10) NOT NULL,
+                  `department` varchar(10) NOT NULL,
+                  `semester` varchar(10) NOT NULL,
+                  `subject` varchar(40) NOT NULL,
+                  PRIMARY KEY (`book_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="stu_details">
+                CREATE TABLE `stu_details` (
+                  `f_name` varchar(20) NOT NULL,
+                  `l_name` varchar(20) NOT NULL,
+                  `g_name` varchar(30) NOT NULL,
+                  `roll_no` varchar(30) NOT NULL,
+                  `department` varchar(10) NOT NULL,
+                  `semester` varchar(10) NOT NULL,
+                  `p_number` varchar(13) NOT NULL,
+                  `mail_id` varchar(40) NOT NULL,
+                  `u_id` varchar(20) NOT NULL,
+                  PRIMARY KEY (`u_id`),
+                  UNIQUE KEY `p_number` (`p_number`),
+                  UNIQUE KEY `roll_no` (`roll_no`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'library_management'
+    -->
+    <database name="library_management">
+        <!-- Table admin -->
+        <table name="admin">
+            <column name="id">1</column>
+            <column name="user_name">Admin</column>
+            <column name="pass">123</column>
+        </table>
+        <!-- Table book_entry -->
+        <table name="book_entry">
+            <column name="book_id">AB1</column>
+            <column name="book_name">CHEMISTRY II</column>
+            <column name="author_name">RIYA DAS</column>
+            <column name="price">200.00</column>
+            <column name="department">sc</column>
+            <column name="semester">2nd</column>
+            <column name="subject">chemistry2t</column>
+            <column name="entry_date">2020-08-11</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB10</column>
+            <column name="book_name">PHYSICS I</column>
+            <column name="author_name">K BARMAN</column>
+            <column name="price">300.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">physics1t</column>
+            <column name="entry_date">2020-08-14</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB11</column>
+            <column name="book_name">MATH I</column>
+            <column name="author_name">PPK</column>
+            <column name="price">400.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">mathematics1</column>
+            <column name="entry_date">2020-08-14</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB12</column>
+            <column name="book_name">MATH I</column>
+            <column name="author_name">PPK</column>
+            <column name="price">400.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">mathematics1</column>
+            <column name="entry_date">2020-08-14</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB14</column>
+            <column name="book_name">ENGLISH I</column>
+            <column name="author_name">L SARMAH</column>
+            <column name="price">200.00</column>
+            <column name="department">hu</column>
+            <column name="semester">1st</column>
+            <column name="subject">english1</column>
+            <column name="entry_date">2020-08-21</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB15</column>
+            <column name="book_name">ENGINEERING  ECONOMICS AND ACCOUNTANCY</column>
+            <column name="author_name">Y AZIZ</column>
+            <column name="price">300.00</column>
+            <column name="department">hu</column>
+            <column name="semester">3rd</column>
+            <column name="subject">eea</column>
+            <column name="entry_date">2020-08-14</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB2</column>
+            <column name="book_name">CRYPTOGRAPHY AND NETWORK SECURITY</column>
+            <column name="author_name">RAHUL DAS</column>
+            <column name="price">300</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="subject">cnst</column>
+            <column name="entry_date">2020-08-12</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB3</column>
+            <column name="book_name">CRYPTOGRAPHY AND NETWORK SECURITY</column>
+            <column name="author_name">NILIM DEKA</column>
+            <column name="price">300</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="subject">cnst</column>
+            <column name="entry_date">2020-08-11</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB4</column>
+            <column name="book_name">CHEMISTRY -I</column>
+            <column name="author_name">RAHUL SARMA</column>
+            <column name="price">200</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">chemistry1t</column>
+            <column name="entry_date">2020-08-04</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB5</column>
+            <column name="book_name">PHYSICS I</column>
+            <column name="author_name">RIYA KAKATI</column>
+            <column name="price">300</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">physics1t</column>
+            <column name="entry_date">2020-08-10</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB6</column>
+            <column name="book_name">CHEMISTRY II</column>
+            <column name="author_name">RIYA DAS</column>
+            <column name="price">200.00</column>
+            <column name="department">sc</column>
+            <column name="semester">2nd</column>
+            <column name="subject">chemistry2t</column>
+            <column name="entry_date">2020-08-14</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB7</column>
+            <column name="book_name">CHEMISTRY II</column>
+            <column name="author_name">RIYA DAS</column>
+            <column name="price">200.00</column>
+            <column name="department">sc</column>
+            <column name="semester">2nd</column>
+            <column name="subject">chemistry2t</column>
+            <column name="entry_date">2020-08-14</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB8</column>
+            <column name="book_name">PHYSICS I</column>
+            <column name="author_name">K BARMAN</column>
+            <column name="price">300.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">physics1t</column>
+            <column name="entry_date">2020-08-14</column>
+        </table>
+        <table name="book_entry">
+            <column name="book_id">AB9</column>
+            <column name="book_name">PHYSICS I</column>
+            <column name="author_name">K BARMAN</column>
+            <column name="price">300.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">physics1t</column>
+            <column name="entry_date">2020-08-14</column>
+        </table>
+        <!-- Table img_upload -->
+        <table name="img_upload">
+            <column name="image">DSCN9187.JPG</column>
+            <column name="u_id">ASHIM3127</column>
+        </table>
+        <table name="img_upload">
+            <column name="image">lptp.jpeg</column>
+            <column name="u_id">MANOSH2309</column>
+        </table>
+        <table name="img_upload">
+            <column name="image">lptp.jpeg</column>
+            <column name="u_id">RUP4434</column>
+        </table>
+        <!-- Table issue_books -->
+        <table name="issue_books">
+            <column name="book_id">AB10</column>
+            <column name="book_name">PHYSICS I</column>
+            <column name="price">300.00</column>
+            <column name="stu_name">RUP BARMAN</column>
+            <column name="roll_no">NAL/17/CO/001</column>
+            <column name="u_id">RUP4434</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="issue_date">2020-09-09</column>
+        </table>
+        <!-- Table library_book -->
+        <table name="library_book">
+            <column name="book_id">AB1</column>
+            <column name="book_name">CHEMISTRY II</column>
+            <column name="author_name">RIYA DAS</column>
+            <column name="price">200.00</column>
+            <column name="department">sc</column>
+            <column name="semester">2nd</column>
+            <column name="subject">chemistry2t</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB11</column>
+            <column name="book_name">MATH I</column>
+            <column name="author_name">PPK</column>
+            <column name="price">400.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">mathematics1</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB12</column>
+            <column name="book_name">MATH I</column>
+            <column name="author_name">PPK</column>
+            <column name="price">400.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">mathematics1</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB14</column>
+            <column name="book_name">ENGLISH I</column>
+            <column name="author_name">L SARMAH</column>
+            <column name="price">200.00</column>
+            <column name="department">hu</column>
+            <column name="semester">1st</column>
+            <column name="subject">english1</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB15</column>
+            <column name="book_name">ENGINEERING  ECONOMICS AND ACCOUNTANCY</column>
+            <column name="author_name">Y AZIZ</column>
+            <column name="price">300.00</column>
+            <column name="department">hu</column>
+            <column name="semester">3rd</column>
+            <column name="subject">eea</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB2</column>
+            <column name="book_name">CRYPTOGRAPHY AND NETWORK SECURITY</column>
+            <column name="author_name">RAHUL DAS</column>
+            <column name="price">300</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="subject">cnst</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB3</column>
+            <column name="book_name">CRYPTOGRAPHY AND NETWORK SECURITY</column>
+            <column name="author_name">NILIM DEKA</column>
+            <column name="price">300</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="subject">cnst</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB4</column>
+            <column name="book_name">CHEMISTRY -I</column>
+            <column name="author_name">RAHUL SARMA</column>
+            <column name="price">200</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">chemistry1t</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB5</column>
+            <column name="book_name">PHYSICS I</column>
+            <column name="author_name">RIYA KAKATI</column>
+            <column name="price">300</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">physics1t</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB6</column>
+            <column name="book_name">CHEMISTRY II</column>
+            <column name="author_name">RIYA DAS</column>
+            <column name="price">200.00</column>
+            <column name="department">sc</column>
+            <column name="semester">2nd</column>
+            <column name="subject">chemistry2t</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB7</column>
+            <column name="book_name">CHEMISTRY II</column>
+            <column name="author_name">RIYA DAS</column>
+            <column name="price">200.00</column>
+            <column name="department">sc</column>
+            <column name="semester">2nd</column>
+            <column name="subject">chemistry2t</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB8</column>
+            <column name="book_name">PHYSICS I</column>
+            <column name="author_name">K BARMAN</column>
+            <column name="price">300.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">physics1t</column>
+        </table>
+        <table name="library_book">
+            <column name="book_id">AB9</column>
+            <column name="book_name">PHYSICS I</column>
+            <column name="author_name">K BARMAN</column>
+            <column name="price">300.00</column>
+            <column name="department">sc</column>
+            <column name="semester">1st</column>
+            <column name="subject">physics1t</column>
+        </table>
+        <!-- Table remove_book -->
+        <table name="remove_book">
+            <column name="remove_date">2020-09-14</column>
+            <column name="book_id">AB13</column>
+            <column name="book_name">ENGINEERING DRWAING</column>
+            <column name="author_name">R DAS</column>
+            <column name="price">400.00</column>
+            <column name="department">cse</column>
+            <column name="semester">1st</column>
+            <column name="subject">ed</column>
+        </table>
+        <!-- Table stu_details -->
+        <table name="stu_details">
+            <column name="f_name">ASHIM</column>
+            <column name="l_name">PATOWARY</column>
+            <column name="g_name">CHANDRA PATOWARY</column>
+            <column name="roll_no">NAL/17/CO/002</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="p_number">9101171367</column>
+            <column name="mail_id">rupjyoti921@gmail.com</column>
+            <column name="u_id">ASHIM3127</column>
+        </table>
+        <table name="stu_details">
+            <column name="f_name">KARABI</column>
+            <column name="l_name">BARMAN</column>
+            <column name="g_name">RATAN BARMAN</column>
+            <column name="roll_no">NAL/19/EE/020</column>
+            <column name="department">ee</column>
+            <column name="semester">2nd</column>
+            <column name="p_number">9101171321</column>
+            <column name="mail_id">rupjyoti921@gmail.com</column>
+            <column name="u_id">KARABI5052</column>
+        </table>
+        <table name="stu_details">
+            <column name="f_name">MANAB</column>
+            <column name="l_name">JYOTI SARMAH</column>
+            <column name="g_name">ANKIT SARMAH</column>
+            <column name="roll_no">NAL/17/CO/40</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="p_number">9101171376</column>
+            <column name="mail_id">manabjyotisarmah123@gmail.com</column>
+            <column name="u_id">MANAB2958</column>
+        </table>
+        <table name="stu_details">
+            <column name="f_name">MANOSH</column>
+            <column name="l_name">PRATIM</column>
+            <column name="g_name">RATAN DAS</column>
+            <column name="roll_no">NAL?A7/CO/006</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="p_number">9101171355</column>
+            <column name="mail_id">rupjyoti921@gmail.com</column>
+            <column name="u_id">MANOSH2309</column>
+        </table>
+        <table name="stu_details">
+            <column name="f_name">NITISH</column>
+            <column name="l_name">KUMAR</column>
+            <column name="g_name">ANKIT KUMAR</column>
+            <column name="roll_no">NAL/18/CO/022</column>
+            <column name="department">cse</column>
+            <column name="semester">4th</column>
+            <column name="p_number">9101171234</column>
+            <column name="mail_id">rupjyoti921@gmail.com</column>
+            <column name="u_id">NITISH4303</column>
+        </table>
+        <table name="stu_details">
+            <column name="f_name">PARISHMITA</column>
+            <column name="l_name">DEKA</column>
+            <column name="g_name">MATHUR DEKA</column>
+            <column name="roll_no">NAL/19/CO/001</column>
+            <column name="department">cse</column>
+            <column name="semester">2nd</column>
+            <column name="p_number">9101171360</column>
+            <column name="mail_id">rupjyoti921@gmail.com</column>
+            <column name="u_id">PARISHMITA5185</column>
+        </table>
+        <table name="stu_details">
+            <column name="f_name">RAHUL</column>
+            <column name="l_name">TALUKDAR</column>
+            <column name="g_name">PRIYANKA TALUKDAR</column>
+            <column name="roll_no">NAL/19/PT/012</column>
+            <column name="department">pt</column>
+            <column name="semester">2nd</column>
+            <column name="p_number">9101171322</column>
+            <column name="mail_id">rupjyoti921@gmail.com</column>
+            <column name="u_id">RAHUL2420</column>
+        </table>
+        <table name="stu_details">
+            <column name="f_name">RUP</column>
+            <column name="l_name">BARMAN</column>
+            <column name="g_name">RINA BARMAN</column>
+            <column name="roll_no">NAL/17/CO/001</column>
+            <column name="department">cse</column>
+            <column name="semester">6th</column>
+            <column name="p_number">9101171366</column>
+            <column name="mail_id">rupjyoti921@gmail.com</column>
+            <column name="u_id">RUP4434</column>
+        </table>
+        <table name="stu_details">
+            <column name="f_name">VENUS</column>
+            <column name="l_name">DAS</column>
+            <column name="g_name">RAJEN DAS</column>
+            <column name="roll_no">NAL/18/EE/043</column>
+            <column name="department">ee</column>
+            <column name="semester">4th</column>
+            <column name="p_number">9101171387</column>
+            <column name="mail_id">rupjyoti921@gmail.com</column>
+            <column name="u_id">VENUS4659</column>
+        </table>
+    </database>
+</pma_xml_export>
